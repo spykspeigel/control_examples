@@ -1,0 +1,17 @@
+function dy =cartpend(y,m,M,L,g,d,u)
+
+% y : state vector
+% m : pendulum mass
+% L : length of the inverted pendulum
+% M : mass of the cart
+% g : gravity
+% d : damping term like friction on the cart
+% u : force on the cart
+
+
+D = m*sin(y(3)) + M;
+
+dy(1,1) = y(2);
+dy(2,1) = ( u + m * sin(y(3)) * ( L* y(4) * y(4) + g * cos(y(3)) ) ) / D;
+dy(3,1) = y(3);
+dy(4,1) = (-u*cos(y(3)) -m*L*y(3)*y(3)*cos(y(3))*sin(y(3)) - (M+m)*g* sin(y(3)) )
