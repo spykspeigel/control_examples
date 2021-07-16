@@ -1,4 +1,3 @@
-# Optimal_control_examples
 
 The code follows the closed loop steering of a unicycle based on classic Lyapunov function.
 One can refer following paper for further details
